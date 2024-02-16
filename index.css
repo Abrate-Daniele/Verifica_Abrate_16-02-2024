@@ -1,0 +1,11 @@
+.cardPub{
+    transform-style:preserve-3d; 
+}
+
+.faccia{
+    backface-visibility: hidden;
+}
+
+footer section{
+    width:max-content;
+}
