@@ -9,3 +9,93 @@
 footer section{
     width:max-content;
 }
+article img{
+    width: 150px;
+    height: 200px;
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.cardPub > .faccia{
+    width: 80px;
+    height: 110px;
+    background-image: url(./img/dorso.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.cardPub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+header{
+    text-align: center;
+    font-size: 30pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+article header{
+    font-size: 15pt;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: left;
+    width: 460px;
+    height: 25px;
+    border-bottom: 2px black solid;
+    margin-bottom: 10px;
+}
+section:has(.cardPub){
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    margin-left: 15px;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+section div{
+    color: red;
+    font-weight:bolder;
+    text-align: center;
+}
+section > div{
+    display: flex;
+}
+.faccia:first-child{
+    display: none;
+}
+.faccia{
+    margin: 5px;
+}
+@media (max-width:500px){
+    section:has(.cardPub){
+        display: none;
+    }
+}
+footer section{
+    width: max-content;
+    animation-name: tit;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+    animation-delay: 0ms;
+    animation-timing-function: ease-in-out;
+    font-size: 20pt;
+}
+@keyframes tit{
+    0%{
+        transform:translateX(0px);
+    }
+    100%{
+        transform:translateX(-2000px);
+    }
+}
+@media print{
+    section:has(.cardPub){
+        display: none;
+    }
+    footer{
+        display:block;
+        flex-direction: column;
+    }
+}
